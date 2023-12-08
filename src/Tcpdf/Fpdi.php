@@ -31,7 +31,6 @@ use TCPDF;
  * @method _encrypt_data(int $n, string $s) string
  * 
  */
-
 class Fpdi extends \TCPDF
 {
     use FpdiTrait {

@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'afe8fe10bd1a677846f15f7de779f246e8cb4559',
         'name' => 'setasign/fpdi',
         'dev' => true,
     ),
@@ -56,12 +56,12 @@
             'dev_requirement' => true,
         ),
         'phpdocumentor/type-resolver' => array(
-            'pretty_version' => '1.6.1',
-            'version' => '1.6.1.0',
+            'pretty_version' => '1.6.2',
+            'version' => '1.6.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpdocumentor/type-resolver',
             'aliases' => array(),
-            'reference' => '77a32518733312af16a44300404e945338981de3',
+            'reference' => '48f445a408c131e38cab1c235aa6d2bb7a0bb20d',
             'dev_requirement' => true,
         ),
         'phpspec/prophecy' => array(
@@ -236,12 +236,12 @@
             'dev_requirement' => true,
         ),
         'setasign/fpdi' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'afe8fe10bd1a677846f15f7de779f246e8cb4559',
             'dev_requirement' => false,
         ),
         'setasign/tfpdf' => array(

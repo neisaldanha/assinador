@@ -3209,7 +3209,7 @@ class TCPDF {
 			return;
 		}
 		// print page footer
-		$this->setFooter();
+		//$this->setFooter();// aqui seta uma linha no rodapé da pagina(por isso foi retirado em 27/03/2023 - Elcinei Saldanha)
 		// close page
 		$this->_endpage();
 		// mark page as closed
@@ -3281,7 +3281,7 @@ class TCPDF {
 		// mark this point
 		$this->setPageMark();
 		// print page header
-		$this->setHeader();
+		//$this->setHeader();// insere uma linha no inicio e no fim da pagina (por isso foi retirado em 27/03/2023 - Elcinei Saldanha)
 		// restore graphic settings
 		$this->setGraphicVars($gvars);
 		// mark this point

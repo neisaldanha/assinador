@@ -27,7 +27,7 @@ if (isset($_POST["submit"])) {
     }
 }
 
-// Check if file already exists
+// Verifica se o arquivo ja existe, se existir um arquivo com o mesmo nome, o arquivo é excluido
 if (file_exists($target_file)) {
     unlink($target_file);
     $uploadOk = 1;
@@ -101,7 +101,7 @@ use setasign\Fpdi\Tcpdf\Fpdi;
 require_once('vendor/autoload.php');
 
 // Iniciando o  FPDI
-$pdf = new Fpdi('P', 'mm', array(210, 297));
+$pdf = new Fpdi();
 
 $url = 'http://facisb.edu.br'; // URL de validação do documento
 $file = $pdf->setSourceFile($target_file);
@@ -129,7 +129,7 @@ for ($i = 1; $i <= $file; $i++) {
 }
 $dirArq = basename($_FILES["documento"]["name"]);
 ob_end_clean(); // Limpa buffer
-$pdf->Output($_SERVER['DOCUMENT_ROOT'] . 'pdf2/assinados/Assinado-'. $dirArq, 'F');
+$pdf->Output($_SERVER['DOCUMENT_ROOT'] . 'assinador/assinados/Assinado-'. $dirArq, 'F');
 //$docAssi = $_SERVER['DOCUMENT_ROOT'] . 'pdf2/assinados/Assinado-'. $dirArq;
 echo "
       <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=index.php'>
