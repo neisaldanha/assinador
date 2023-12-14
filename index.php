@@ -1,47 +1,3 @@
-<?php
-
-use phpDocumentor\Reflection\Types\Null_;
-
-error_reporting(0);
-ini_set("display_errors", 0);
-// Transforma os resultados, vindo do banco, em o formato JSON 
-//header("Content-Type: application/json");
-/*
-// Conexao com o banco de dados MySql
-$dbhost = 'facisb01.l70cnn1109.mysql.dbaas.com.br';
-$dbuser = 'facisb01';
-$dbpass = 'med678132@i';
-$db     = 'facisb01';
-
-$con    = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-*/
-
-$docAssinado = $_GET['doc'];
-$docnome = $_GET['nomedoc'];
-$upload = json_decode($docAssinado);
-$uploadnome = json_decode($docnome);
-$del = $_GET['del'];
-if ($del) {
-    if (unlink('assinados/' . $del)) {
-        echo "
-      <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=index.php'>
-      <script type=\"text/javascript\">
-        alert(\"Arquivo foi excluido da pasta com sucesso!.\");
-      </script>
-    ";
-    } else {
-        echo "
-      <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=index.php'>
-      <script type=\"text/javascript\">
-        alert(\"Opss...! Não foi possível excluir o documento!\");
-      </script>
-    ";
-    }
-} else {
-}
-
-
-?>
 <!doctype html>
 <html lang="en">
 
@@ -132,6 +88,7 @@ if ($del) {
                     </tr>
                 </thead>
                 <tbody>
+
                     <?php
 
                     $path = "assinados/"; // Pasta onde fica os arquivos
@@ -145,12 +102,13 @@ if ($del) {
                             <tr>
                                 <td><?php echo $arquivo; ?></td>
                                 <td><a target="_blank" href="<?php echo $path . $arquivo ?>"><img src="img/pdf_1.png" alt="arquivo" height="50" width="60"></a></td>
-                                <td><a id="delete" href="index.php?del=<?php echo $arquivo; ?>" title="Excluir <?php echo $arquivo; ?>" type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Excluir</a></td>
+                                <td><a id="delete" href="controller/delete.php?del=<?php echo $arquivo; ?>" title="Excluir <?php echo $arquivo; ?>" type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Excluir</a></td>
                             </tr>
                     <?php
                         }
                     }
                     ?>
+
                 </tbody>
             </table>
         </section>
@@ -164,7 +122,9 @@ if ($del) {
                     <li class="nav-item"><a href="#" target="_blank" class="btn btn-success nav-link px-2 text-muted">Teste 2</a></li>
                 </ul>
     -->
-                <p class="text-center text-muted">© 2022 - <?php echo date('Y') ?> - Teste Assinador de documentos</p>
+                <p class="text-center text-muted">© 2022 -
+                    <?php echo date('Y') ?> - Teste Assinador de documentos
+                </p>
             </footer>
         </div>
     </div>
